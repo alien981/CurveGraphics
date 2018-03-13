@@ -9,6 +9,11 @@ color = [ 0, 255, 0 ]
 edges = []
 transform = new_matrix()
 
+add_circle(edges, 200, 200, 0, 200, 360)
+clear_screen(screen)
+draw_lines(edges, screen, color)
+display(screen)
+
 # print_matrix( make_translate(3, 4, 5) )
 # print
 # print_matrix( make_scale(3, 4, 5) )
@@ -19,4 +24,4 @@ transform = new_matrix()
 # print
 # print_matrix( make_rotZ(math.pi/4) )
 
-parse_file( 'script', edges, transform, screen, color )
+#parse_file( 'script', edges, transform, screen, color )
