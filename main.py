@@ -9,7 +9,8 @@ color = [ 0, 255, 0 ]
 edges = []
 transform = new_matrix()
 
-add_circle(edges, 200, 200, 0, 200, 360)
+#add_circle(edges, 200, 200, 0, 200, 360)
+#add_bezier(edges, 0, 0, 200, 400, 400, 200, 500, 500)
 clear_screen(screen)
 draw_lines(edges, screen, color)
 display(screen)
