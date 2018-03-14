@@ -19,10 +19,22 @@ def add_circle( points, cx, cy, cz, r, step ):
 	add_point(points, x0, y0, cz)
 
 #def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-#	if curve_type == "b":
-		
+#	if curve_type == "b":		
+
 def add_hermite(points, x0, y0, r0, x1, y1, r1):
-	pass
+	t = 0.0
+	x = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*x0 + (math.pow(t, 3)-2*math.pow(t, 2)+t)*r0 + (-2*math.pow(t,3)+3*math.pow(t,3))*x1 +(math.pow(t,3)-math.pow(t,2))*r1
+	y = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*y0 + 3*math.pow(t,3)*y1
+	while t<1.0:
+		x = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*x0 + (math.pow(t, 3)-2*math.pow(t, 2)+t)*r0 + (-2*math.pow(t,3)+3*math.pow(t,3))*x1 +(math.pow(t,3)-math.pow(t,2))*r1
+		y = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*y0 + 3*math.pow(t,3)*y1
+		add_point(points, x, y, 0)
+		add_point(points, x, y, 0)
+		t+= .001
+	x = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*x0 + (math.pow(t, 3)-2*math.pow(t, 2)+t)*r0 + (-2*math.pow(t,3)+3*math.pow(t,3))*x1 +(math.pow(t,3)-math.pow(t,2))*r1
+	y = (2*math.pow(t, 3)-3*math.pow(t, 2)+1)*y0 + 3*math.pow(t,3)*y1
+	add_point(points, x, y, 0)
+
 
 def add_bezier(points, x0, y0, x1, y1, x2, y2, x3, y3):
 	t = 0.0

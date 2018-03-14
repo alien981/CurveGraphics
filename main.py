@@ -11,6 +11,7 @@ transform = new_matrix()
 
 #add_circle(edges, 200, 200, 0, 200, 360)
 #add_bezier(edges, 0, 0, 200, 400, 400, 200, 500, 500)
+#add_hermite(edges, 0, 0, 300, 100, 100, 0)
 clear_screen(screen)
 draw_lines(edges, screen, color)
 display(screen)
